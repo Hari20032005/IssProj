@@ -63,8 +63,8 @@ async function sendMessage() {
 
         if (response.ok) {
             const data = await response.json();
-            if (data.phishing_detected) {
-                if (confirm("This message may be a phishing attempt. Do you still want to send it?")) {
+            if (data.spam_detected) {
+                if (confirm("This message has been detected as spam. Do you still want to send it?")) {
                     document.getElementById('message').value = '';
                     loadMessages();
                 }
@@ -94,8 +94,8 @@ async function loadMessages() {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message');
             messageElement.classList.add(message.sender === currentUser ? 'sent' : 'received');
-            if (message.phishing_detected) {
-                messageElement.classList.add('phishing');
+            if (message.spam_detected) {
+                messageElement.classList.add('spam');
             }
             
             const contentElement = document.createElement('div');
@@ -106,6 +106,13 @@ async function loadMessages() {
             hmacElement.classList.add('hmac');
             hmacElement.textContent = `HMAC: ${message.hmac}`;
             messageElement.appendChild(hmacElement);
+            
+            if (message.spam_detected) {
+                const spamWarning = document.createElement('div');
+                spamWarning.classList.add('spam-warning');
+                spamWarning.textContent = 'Potential spam message';
+                messageElement.appendChild(spamWarning);
+            }
             
             messagesContainer.appendChild(messageElement);
         });
