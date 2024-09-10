@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#auth, #chat {
+    width: 100%;
+    max-width: 400px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#messages {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.sent {
+    background-color: #e6f3ff;
+    text-align: right;
+}
+
+.received {
+    background-color: #f0f0f0;
+    text-align: left;
+}
+
+.phishing {
+    background-color: #ffcccc;
+    border: 2px solid #ff0000;
+}
+
+.hmac {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}

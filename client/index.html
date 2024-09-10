@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Messaging App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="auth">
+            <h2>Register</h2>
+            <input type="text" id="reg-username" placeholder="Username">
+            <input type="password" id="reg-password" placeholder="Password">
+            <button onclick="register()">Register</button>
+
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username">
+            <input type="password" id="login-password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+
+        <div id="chat" style="display: none;">
+            <h2>Chat</h2>
+            <input type="text" id="recipient" placeholder="Recipient">
+            <input type="text" id="message" placeholder="Message">
+            <button onclick="sendMessage()">Send</button>
+            <div id="messages"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
